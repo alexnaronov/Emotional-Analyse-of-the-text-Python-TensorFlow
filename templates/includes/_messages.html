@@ -1,0 +1,8 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <!-----<script> M.toast({html: '{{ message }}'})</script> -->
+      <h4>{{ message }}</h4>
+    {% endfor %}
+  {% endif %}
+{% endwith %}

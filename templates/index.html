@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="row left-align">
+    <img src={{ link }} />
+    <div class="col s12">
+      <h5>Welcome to the Check Emotion app</h5>
+      <p>This is application is built on the Python Flask framework and is the focus for the coursework "Checking emotional color of text by neural network"</p>
+    </div>
+    <div class="col s12">
+      <div class="divider"></div>
+      <div class="section left-align">
+        <h6>Enter text to check emotion</h6>
+        <div class="row">
+          {% from "includes/_formhelpers.html" import render_field %}
+          <form method="POST" action="" class="col s12">
+            <div class="row">
+              <div class="col s12">
+                {{render_field(form.Type, class_="browser-default")}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                {{render_field(form.Text, class_="materialize-textarea")}}
+              </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">
+              Analyse
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
